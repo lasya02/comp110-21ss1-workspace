@@ -1,16 +1,43 @@
 """An exercise with functions and lists."""
 
-__author__ = "YOUR 9-DIGIT PID"
+__author__ = "730411126"
 
 
 def main() -> None:
     """The entrypoint of the program, when run as a module."""
-    # TODO 3: Test your functions here
+    first_str = input("Enter a number ")
+    second_str = input("Enter another greater number ")
+    first = int(first_str)
+    second = int(second_str)
+    print(list_primes(first,second))
+    return None
 
 
-# TODO 1: Define the is_prime function, and its logic, here.
+def is_prime(a:int) -> bool: 
+    """If this is prime, then true."""
+    prime = False
+    x: list[int] = []
+    for values in range(2,a):
+        if a % values == 0: 
+                x.append(values)
+    if len(x) > 0: 
+        prime = False
+    else: 
+        prime = True
+    if a <= 1: 
+        prime = False
+    return prime
 
-# TODO 2: Define the list_primes function, and its logic, here.
+
+def list_primes(x: int, y:int) -> list[int]: 
+    primes: list[int] = []
+    checking = range(x,y,1)
+
+    for values in checking: 
+        prime_or_not = is_prime(values)
+        if prime_or_not is True: 
+           primes.append(values) 
+    return primes
 
 
 if __name__ == "__main__":
