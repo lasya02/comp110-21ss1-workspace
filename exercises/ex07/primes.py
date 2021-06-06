@@ -9,17 +9,17 @@ def main() -> None:
     second_str = input("Enter another greater number ")
     first = int(first_str)
     second = int(second_str)
-    print(list_primes(first,second))
+    print(list_primes(first, second))
     return None
 
 
-def is_prime(a:int) -> bool: 
+def is_prime(a: int) -> bool: 
     """If this is prime, then true."""
     prime = False
     x: list[int] = []
-    for values in range(2,a):
+    for values in range(2, a):
         if a % values == 0: 
-                x.append(values)
+            x.append(values)
     if len(x) > 0: 
         prime = False
     else: 
@@ -29,14 +29,15 @@ def is_prime(a:int) -> bool:
     return prime
 
 
-def list_primes(x: int, y:int) -> list[int]: 
+def list_primes(x: int, y: int) -> list[int]: 
+    """This makes a list."""
     primes: list[int] = []
-    checking = range(x,y,1)
+    checking = range(x, y, 1)
 
     for values in checking: 
         prime_or_not = is_prime(values)
         if prime_or_not is True: 
-           primes.append(values) 
+            primes.append(values) 
     return primes
 
 

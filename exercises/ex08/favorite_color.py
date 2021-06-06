@@ -1,15 +1,31 @@
 """A program to determine top favorite colors."""
 
-__author__ = "YOUR 9-DIGIT PID"
+__author__ = "730411126"
 
 
 def main() -> None:
     """The entrypoint of the program, when run as a module."""
-    # TODO 2: Test your functions here
+    colors = {"anna": "blue", "kris": "green", "sarah": "blue", "shaurik": "blue"}
+    print(favorite_color(colors))
+    return None
 
 
-# TODO 1: Define the favorite_color function, and its logic, here.
-
+def favorite_color(colors: dict[str, str]) -> str: 
+    """What is the favorite color?"""
+    count: dict[str, int] = {}
+    for keys in colors: 
+        if colors[keys] not in count: 
+            count[colors[keys]] = 1
+        else: 
+            count[colors[keys]] += 1
+    max = 0 
+    color = ""
+    for keys in count: 
+        if count[keys] > max: 
+            max = count[keys]
+            color = keys
+    return color
+    
 
 if __name__ == "__main__":
     main()
